@@ -1,0 +1,658 @@
+/* =========================================================
+   UI/UX PROJECTS
+========================================================= */
+
+.uiux-projects {
+  position: relative;
+}
+
+/* =========================================================
+   GALLERY TITLE
+========================================================= */
+
+.uiux-gallery-title {
+  text-align: center;
+  margin: 45px auto 30px;
+}
+
+.uiux-gallery-title span {
+  display: block;
+  margin-bottom: 9px;
+
+  color: #6366f1;
+
+  font-size: 0.62rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.uiux-gallery-title h3 {
+  margin: 0;
+
+  color: #f5f7ff;
+
+  font-size: 1.45rem;
+  font-weight: 600;
+
+  letter-spacing: -0.025em;
+}
+
+.uiux-gallery-title p {
+  margin-top: 7px;
+
+  color: #858599;
+
+  font-size: 0.76rem;
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.uiux-gallery {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 22px;
+
+  width: 100%;
+  min-height: 500px;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+.uiux-gallery-main {
+  position: relative;
+
+  width: min(720px, 62vw);
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #08080d;
+
+  border: 1px solid #24243a;
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(99, 102, 241, 0.03);
+
+  z-index: 2;
+}
+
+.uiux-gallery-main img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.uiux-gallery-main:hover img {
+  transform: scale(1.025);
+}
+
+/* =========================================================
+   MAIN IMAGE OVERLAY
+========================================================= */
+
+.uiux-gallery-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  padding: 20px;
+
+  background: linear-gradient(
+    to top,
+    rgba(5, 5, 10, 0.7),
+    transparent 42%
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.uiux-gallery-main:hover .uiux-gallery-overlay {
+  opacity: 1;
+}
+
+.uiux-gallery-overlay span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 9px 12px;
+
+  color: #ffffff;
+
+  background: rgba(10, 10, 18, 0.88);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 6px;
+
+  font-size: 0.68rem;
+}
+
+.uiux-gallery-overlay svg {
+  color: #6366f1;
+}
+
+/* =========================================================
+   SIDE IMAGES
+========================================================= */
+
+.uiux-gallery-side {
+  position: relative;
+
+  width: min(220px, 18vw);
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #08080d;
+
+  border: 1px solid #24243a;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+  z-index: 1;
+}
+
+.uiux-gallery-side:hover {
+  opacity: 0.7 !important;
+  border-color: rgba(99, 102, 241, 0.4);
+
+  transform: scale(1.025);
+}
+
+.uiux-gallery-side img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   GALLERY ARROWS
+========================================================= */
+
+.uiux-gallery-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  color: #f5f7ff;
+
+  background: rgba(16, 16, 24, 0.9);
+
+  border: 1px solid #2a2a42;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.uiux-gallery-arrow:hover {
+  background: #181827;
+
+  border-color: rgba(99, 102, 241, 0.55);
+
+  transform: translateY(-50%) scale(1.06);
+}
+
+.uiux-gallery-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.uiux-gallery-prev {
+  left: 12px;
+}
+
+.uiux-gallery-next {
+  right: 12px;
+}
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+.uiux-gallery-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  margin-top: 25px;
+}
+
+.uiux-gallery-counter > span {
+  min-width: 20px;
+
+  color: #858599;
+
+  font-size: 0.65rem;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-align: center;
+}
+
+.uiux-gallery-counter > span:first-child {
+  color: #6366f1;
+}
+
+.uiux-gallery-line {
+  position: relative;
+
+  width: 120px;
+  height: 1px;
+
+  overflow: hidden;
+
+  background: #29293d;
+}
+
+.uiux-gallery-line-progress {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  height: 100%;
+
+  background: #6366f1;
+}
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.uiux-lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: rgba(3, 3, 8, 0.94);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  z-index: 9999;
+}
+
+.uiux-lightbox-content {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 1100px;
+  max-height: 90vh;
+
+  width: 100%;
+}
+
+.uiux-lightbox-content img {
+  display: block;
+
+  max-width: 88vw;
+  max-height: 82vh;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  border: 1px solid #2a2a42;
+  border-radius: 10px;
+
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+}
+
+/* =========================================================
+   LIGHTBOX CLOSE
+========================================================= */
+
+.uiux-lightbox-close {
+  position: absolute;
+
+  top: -18px;
+  right: -18px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  background: #151521;
+
+  border: 1px solid #303047;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.uiux-lightbox-close:hover {
+  background: #20202f;
+
+  border-color: rgba(99, 102, 241, 0.6);
+
+  transform: rotate(4deg);
+}
+
+.uiux-lightbox-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================================================
+   LIGHTBOX ARROWS
+========================================================= */
+
+.uiux-lightbox-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  color: #ffffff;
+
+  background: rgba(20, 20, 30, 0.92);
+
+  border: 1px solid #303047;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.uiux-lightbox-arrow:hover {
+  background: #222232;
+
+  border-color: rgba(99, 102, 241, 0.6);
+
+  transform: translateY(-50%) scale(1.06);
+}
+
+.uiux-lightbox-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.uiux-lightbox-prev {
+  left: -70px;
+}
+
+.uiux-lightbox-next {
+  right: -70px;
+}
+
+/* =========================================================
+   LIGHTBOX COUNTER
+========================================================= */
+
+.uiux-lightbox-counter {
+  position: absolute;
+
+  left: 50%;
+  bottom: -35px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #858599;
+
+  font-size: 0.65rem;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+.uiux-lightbox-counter span:first-child {
+  color: #6366f1;
+}
+
+.uiux-lightbox-divider {
+  color: #45455a;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .uiux-gallery {
+    gap: 14px;
+  }
+
+  .uiux-gallery-main {
+    width: min(620px, 65vw);
+  }
+
+  .uiux-gallery-side {
+    width: min(170px, 15vw);
+  }
+
+  .uiux-gallery-prev {
+    left: 8px;
+  }
+
+  .uiux-gallery-next {
+    right: 8px;
+  }
+
+  .uiux-lightbox-prev {
+    left: 15px;
+  }
+
+  .uiux-lightbox-next {
+    right: 15px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+  .uiux-gallery-title {
+    margin-top: 35px;
+  }
+
+  .uiux-gallery-title h3 {
+    font-size: 1.25rem;
+  }
+
+  .uiux-gallery-title p {
+    font-size: 0.7rem;
+
+    padding: 0 20px;
+  }
+
+  .uiux-gallery {
+    min-height: auto;
+
+    gap: 0;
+  }
+
+  .uiux-gallery-main {
+    width: calc(100% - 70px);
+
+    aspect-ratio: 16 / 10;
+
+    border-radius: 11px;
+  }
+
+  .uiux-gallery-side {
+    display: none;
+  }
+
+  .uiux-gallery-arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .uiux-gallery-prev {
+    left: 8px;
+  }
+
+  .uiux-gallery-next {
+    right: 8px;
+  }
+
+  .uiux-gallery-counter {
+    margin-top: 20px;
+  }
+
+  .uiux-gallery-line {
+    width: 90px;
+  }
+
+  .uiux-lightbox {
+    padding: 20px;
+  }
+
+  .uiux-lightbox-content img {
+    max-width: 94vw;
+    max-height: 76vh;
+  }
+
+  .uiux-lightbox-close {
+    top: -50px;
+    right: 0;
+  }
+
+  .uiux-lightbox-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .uiux-lightbox-prev {
+    left: 5px;
+  }
+
+  .uiux-lightbox-next {
+    right: 5px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .uiux-gallery-main {
+    width: calc(100% - 60px);
+  }
+
+  .uiux-gallery-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .uiux-gallery-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .uiux-gallery-counter {
+    gap: 9px;
+  }
+
+  .uiux-gallery-line {
+    width: 70px;
+  }
+
+  .uiux-lightbox-arrow {
+    width: 36px;
+    height: 36px;
+  }
+}
